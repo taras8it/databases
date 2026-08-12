@@ -1,0 +1,146 @@
+--Oleksandr Kuprii 510190
+
+
+--1
+SELECT
+	*
+FROM
+	staff;
+
+--2
+SELECT
+	film_id,
+	title,
+	description
+FROM
+	film;
+
+--3
+SELECT
+	category_id,
+	name
+FROM
+	category;
+
+--4
+SELECT
+	category_id,
+	name
+FROM
+	category
+ORDER BY
+	name;
+
+--5
+SELECT
+	first_name,
+	last_name,
+	city,
+	email
+FROM
+	customer
+ORDER BY
+	last_name;
+
+--6
+SELECT
+	*
+FROM
+	customer
+ORDER BY
+	last_name DESC,
+	first_name;
+
+--7
+SELECT
+	release_year,
+	film_id,
+	title,
+	description
+FROM
+	film
+ORDER BY
+	release_year DESC
+LIMIT 20;
+
+--8 
+SELECT DISTINCT
+	city,
+	country
+FROM
+	customer
+ORDER BY
+	country DESC;
+
+--9
+SELECT
+	*
+FROM
+	customer
+ORDER BY
+	customer_id DESC;
+
+--10
+SELECT
+	*
+FROM
+	actor
+WHERE
+	last_name = 'Cage';
+
+--11
+SELECT
+	*
+FROM
+	customer
+WHERE
+	first_name in ('Kelly', 'Edith')
+ORDER BY
+	last_name;
+
+--12
+SELECT
+	film_id,
+	title,
+	description
+FROM
+	film
+WHERE
+	description LIKE '%Documentary%'
+ORDER BY
+	title;
+
+--13
+SELECT
+	*
+FROM
+	customer
+WHERE
+	first_name LIKE 'A%'
+	AND first_name LIKE '____%';
+
+--14
+SELECT
+	customer_id,
+	rental_date,
+	inventory_id
+FROM
+	rental
+WHERE
+	return_date IS NULL
+ORDER BY
+	customer_id;
+
+--15
+SELECT
+	title,
+	rental_duration,
+	release_year,
+	rating
+FROM
+	film
+WHERE
+	rating = 'PG-13'
+	AND release_year > 2000
+ORDER BY
+	rental_duration DESC;
